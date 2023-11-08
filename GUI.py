@@ -1,41 +1,51 @@
-
 import pygame,sys
 
-pygame.init()
+class main():
+    pygame.init()
 
-res = (720,720)
+    window_size = (800,800) #what we want the res to be
+    window = pygame.display.set_mode(window_size) #setting the windows res
+    pygame.display.set_caption("pygame window") # giving the windo a caption
 
-screen = pygame.display.set_mode(res)
+    #define button props
 
-color = (255,255,255)
+    grav_button_color = (255,255,255)
+    grav_button_hover_color = (200,200,200)
+    grav_button_rect = pygame.Rect(300,250,200,100)
+    grav_button_font = pygame.font.SysFont(None,36)
+    grav_button_text = grav_button_font.render("Grav sim",True,(0,0,0))
+    grav_button_text_rect = grav_button_text.get_rect(center = grav_button_rect.center)
 
-# color for buttons
-color_light = (170,170,170)
-color_dark =(100,100,100)
+    # starts loop
+    running = True
+    while running:
+    # handles events
+        for event in pygame.event.get():
+            # ends the loop
+            if event.type == pygame.QUIT:
+                running = False
+                
+            # runs when user clicks on button
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = pygame.mouse.get_pos()
+                if grav_button_rect.collidepoint(mouse_pos):
+                    # loads SandGrav script 
+                    from Sims.SandGrav import SandGrav
+                    SandGrav()
+                    
+                    
 
-width = screen.get_width()
+            # changes color when mouse hovers over button and sets it back when its not
+            if event.type == pygame.MOUSEMOTION:
+                mouse_pos = pygame.mouse.get_pos()
+                if grav_button_rect.collidepoint(mouse_pos):
+                    grav_button_color = grav_button_hover_color
+                else:
+                    grav_button_color = (255,255,255)
 
-height = screen.get_height()
+        window.fill((128,128,128))
+        pygame.draw.rect(window,grav_button_color,grav_button_rect)
+        window.blit(grav_button_text, grav_button_text_rect)
+        pygame.display.flip()
+pygame.quit
 
-smallfont = pygame.font.SysFont("Arial",35)
-
-text = smallfont.render("quit",True,color)
-
-while True:
-    for ev in pygame.event.get():
-        if ev.type == pygame.QUIT:
-            pygame.quit()
-
-        if ev.type == pygame.MOUSEBUTTONDOWN:
-            if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2 +40:
-                pygame.quit()
-
-
-    screen.fill((60,25,60))
-
-    mouse = pygame.mouse.get_pos()
-
-    if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
-        pygame.draw.rect(screen,color_light,[width/2,height/2,140,40])
-    else:
-        pygame.draw.rect(screen,color_dark,[width/2,height/2,140,40])
