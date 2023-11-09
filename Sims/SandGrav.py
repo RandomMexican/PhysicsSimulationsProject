@@ -84,12 +84,15 @@ class SandGrav():
         #limiting the FPS to 60
         clock.tick(60)
 
+        # corners of the main window to create walls
         x0,y0 = p0
         x1,y1 = p1
+        
         pts = [
             (x0,y0),(x1,y0),
             (x1,y1),(x0,y1)
         ]
+        # for all 4 corners creates a segment to act as a wall
         for i in range(4):
             segment = pymunk.Segment(space.static_body, pts[i], pts[(i+1)%4], d)
             segment.elasticity = 1

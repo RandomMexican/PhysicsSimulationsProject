@@ -1,7 +1,7 @@
 Hello this Mario V's phase 3 project which is a GUI that can display different simulations 
 
 
-before running GUI.py install:
+before running main.py install:
 
 pygame
 using 

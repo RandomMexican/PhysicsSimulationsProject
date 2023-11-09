@@ -1,1 +1,5 @@
-stuff
+In this phase, the two modules I worked on were pygame and pymunk. I used pygame for all the UI aspects of the project and pymunk for the physics in the SandGrav script along with pygame so the user could actually see the balls.
+
+pygame was definitely fun to use, especially because I'm used to making games on the Unity engine so having to create the window and GUI from what to me feels like scratch is definitely interesting. It feels like I've been spoiled and having to move the buttons by stopping the script and changing the values of x and y and running it again only to rinse and repeat until I get them to a position I liked was funny since I just kept thinking about how easily I could make this in Unity but I obviously can't use Unity now so I had to keep going.
+
+Pymunk was also very interesting to use since it was similar to Unity since all I needed to do was "add" a module to an object and set its properties to what values I needed to make the game work and run the game. The biggest difference is how I created borders around the window to stop the balls from falling into the void instead of creating four different shapes I instead got the coordinates of the four corners of the window and created four different segments based on those corners.
