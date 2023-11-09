@@ -21,7 +21,7 @@ made using this tutorial
 https://www.youtube.com/watch?v=YrNpkuVIFdg
 https://www.youtube.com/watch?v=G8MYGDf_9ho
 
-![Alt text](image.png)
+<img href = "./Images/image.png">
 
 Planned Sims:
 
