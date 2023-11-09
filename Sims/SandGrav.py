@@ -5,11 +5,15 @@
 import pygame,sys,pymunk
 
 class SandGrav():
-    pygame.init() # initiating pygame
-    screen = pygame.display.set_mode((800,800)) # creating the display surface
-    clock = pygame.time.Clock() # creates in game clock
+    # initiating pygame
+    pygame.init() 
+    # creating the display surface
+    screen = pygame.display.set_mode((800,800))
+    # creates in game clock
+    clock = pygame.time.Clock() 
     space = pymunk.Space()
-    space.gravity = (0,400) #first argument is the gravity 
+    # sets y axis gravity to 400 and x to 0
+    space.gravity = (0,400)  
 
     apples = []
     balls = []
@@ -26,6 +30,8 @@ class SandGrav():
 
     # creates apples
     def create_apple(space,pos):
+        # determines the state of the body in this case 
+        # dynamic means the object is affected by physics
         body = pymunk.Body(1,100,body_type = pymunk.Body.DYNAMIC)
         body.position = pos
         shape = pymunk.Circle(body,10)
@@ -40,6 +46,7 @@ class SandGrav():
             pygame.draw.circle(screen,(0,0,0),(posX,posY),10)
 
     def static_ball(space):
+        # Static means the object is not affected by anything
         body = pymunk.Body(body_type = pymunk.Body.STATIC)
         body.position = (500,500)
         shape = pymunk.Circle(body,50)
@@ -59,6 +66,7 @@ class SandGrav():
                 sys.exit()
 
             if event.type == pygame.MOUSEBUTTONDOWN:
+                # list gets too long 
                 apples.append(create_apple(space,event.pos))
         
 

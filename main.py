@@ -2,10 +2,12 @@ import pygame,sys,Buttons
 
 class main():
     pygame.init()
-
-    window_size = (800,800) #what we want the res to be
-    window = pygame.display.set_mode(window_size) #setting the windows res
-    pygame.display.set_caption("pygame window") # giving the windo a caption
+    #what we want the res to be
+    window_size = (800,800)     
+    #setting the windows res
+    window = pygame.display.set_mode(window_size)
+    # giving the windo a caption
+    pygame.display.set_caption("pygame window")
 
     # load images
     gravIMG = pygame.image.load('Images/SandGravIMG.png').convert_alpha()
@@ -25,14 +27,18 @@ class main():
             # ends the loop
             if event.type == pygame.QUIT:
                 running = False
+        
+        # fills in the window so its not blank
         window.fill((128,128,128))
         
+        # "draws" the button on the window lets 
+        # them do something
         if GravSim.draw(window):
             from Sims.SandGrav import SandGrav
             SandGrav()
         if GOLSim.draw(window):
             print("GOLsim")
-        
+        # updatest the entire contents of the display
         pygame.display.flip()
         
 
