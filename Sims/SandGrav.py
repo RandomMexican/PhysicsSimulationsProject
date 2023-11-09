@@ -2,7 +2,7 @@
 # https://www.youtube.com/watch?v=YrNpkuVIFdg
 
 # importing modules
-import pygame,sys,pymunk,os.path
+import pygame,sys,pymunk
 
 class SandGrav():
     pygame.init() # initiating pygame
@@ -19,11 +19,12 @@ class SandGrav():
     p1 = (800,800)
     d = 2
 
-    mainMIMG = pygame.image.load('..Images/mainmenu.png').convert_alpha()
+    # mainMIMG = pygame.image.load('..Images/mainmenu.png').convert_alpha()
 
     # create back button
-    back_button = button(0,0,mainMIMG,0.8)
+    # back_button = button(0,0,mainMIMG,0.8)
 
+    # creates apples
     def create_apple(space,pos):
         body = pymunk.Body(1,100,body_type = pymunk.Body.DYNAMIC)
         body.position = pos
@@ -31,7 +32,7 @@ class SandGrav():
         space.add(body,shape)
         return shape
 
-
+    # draws apples to make the visible
     def draw_apples(apples,screen):
         for apple in apples:
             posX  = int(apple.body.position.x)
@@ -44,7 +45,7 @@ class SandGrav():
         shape = pymunk.Circle(body,50)
         space.add(body,shape)
         return shape
-
+    
     def draw_static_balls(balls,screen):
         for ball in balls:
             posX  = int(ball.body.position.x)
@@ -62,16 +63,19 @@ class SandGrav():
         
 
         screen.fill((217,217,217))#background color
-        if back_button.draw(screen):
-            from ..GUI import main
-            main() 
+        # if back_button.draw(screen):
+        #     from ..GUI import main
+        #     main() 
         draw_apples(apples,screen)
         draw_static_balls(balls,screen)
         
-        # make_wall(walls)
-        space.step(1/50) #another loop that updates the sim
-        pygame.display.update()#renders the frame
-        clock.tick(60)#limiting the FPS to 120
+        #another loop that updates the sim
+        space.step(1/50) 
+        #renders the frame
+        pygame.display.update()
+        #limiting the FPS to 60
+        clock.tick(60)
+
         x0,y0 = p0
         x1,y1 = p1
         pts = [

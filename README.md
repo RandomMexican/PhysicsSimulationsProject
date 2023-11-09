@@ -1,5 +1,19 @@
 Hello this Mario V's phase 3 project which is a GUI that can display different simulations 
 
+
+before running GUI.py install:
+
+pygame
+using 
+
+> pip install pygame
+
+pymunk
+using
+> pip install pymunk
+
+
+
 Sims Currently Working: 
 
 Falling sand
@@ -11,14 +25,14 @@ https://www.youtube.com/watch?v=G8MYGDf_9ho
 
 Planned Sims:
 
-Orbiting Planets
-using:
-https://github.com/Josephbakulikira/N-body-simulation-with-python--Gravity-solar-system
-
-
 Conways Game of Life
 using: 
 https://www.youtube.com/watch?v=cRWg2SWuXtM
+
+
+Orbiting Planets
+using:
+https://github.com/Josephbakulikira/N-body-simulation-with-python--Gravity-solar-system
 
 
 Buttons were made using: 
