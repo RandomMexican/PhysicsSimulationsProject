@@ -1,5 +1,8 @@
+# made using this Tutorial on physics with python
+# https://www.youtube.com/watch?v=YrNpkuVIFdg
+
 # importing modules
-import pygame,sys,pymunk
+import pygame,sys,pymunk,os.path
 
 class SandGrav():
     pygame.init() # initiating pygame
@@ -12,11 +15,14 @@ class SandGrav():
     balls = []
 
     # balls.append(static_ball(space))
-
     p0 = (0,0)
     p1 = (800,800)
     d = 2
 
+    mainMIMG = pygame.image.load('..Images/mainmenu.png').convert_alpha()
+
+    # create back button
+    back_button = button(0,0,mainMIMG,0.8)
 
     def create_apple(space,pos):
         body = pymunk.Body(1,100,body_type = pymunk.Body.DYNAMIC)
@@ -56,13 +62,16 @@ class SandGrav():
         
 
         screen.fill((217,217,217))#background color
+        if back_button.draw(screen):
+            from ..GUI import main
+            main() 
         draw_apples(apples,screen)
         draw_static_balls(balls,screen)
         
         # make_wall(walls)
         space.step(1/50) #another loop that updates the sim
         pygame.display.update()#renders the frame
-        clock.tick(120)#limiting the FPS to 120
+        clock.tick(60)#limiting the FPS to 120
         x0,y0 = p0
         x1,y1 = p1
         pts = [

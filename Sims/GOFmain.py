@@ -1,3 +1,6 @@
+# made using this tutorial
+# https://www.youtube.com/watch?v=cRWg2SWuXtM
+
 import time
 import pygame
 import numpy as np

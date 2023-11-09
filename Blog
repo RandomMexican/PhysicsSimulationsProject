@@ -1,0 +1,10 @@
+Hello so the way this project works is when ran it opens a GUI with buttons leading to different simulations 
+
+![Alt text](image.png)
+
+Clickin on any of the buttons should load a new window with the respective simulation 
+
+First up is SandGrav.py that starts a simulation where the user can spawn small balls everytime they click, or zoom in/out on a trackpad which spawns multiple at once, that have physics so they fall to the ground and pile up it does lag after a small chunk of balls are spawned and im not sure why.
+
+
+The second sim is ConWays Game of Life
