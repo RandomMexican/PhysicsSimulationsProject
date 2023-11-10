@@ -37,7 +37,8 @@ class main():
             from Sims.SandGrav import SandGrav
             SandGrav()
         if GOLSim.draw(window):
-            print("GOLsim")
+            from Sims.GOLmain import main
+            main()
         # updatest the entire contents of the display
         pygame.display.flip()
         
