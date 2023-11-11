@@ -10,6 +10,7 @@ using
 
 pymunk
 using
+
 > pip install pymunk
 
 
@@ -21,9 +22,6 @@ made using this tutorial
 https://www.youtube.com/watch?v=YrNpkuVIFdg
 https://www.youtube.com/watch?v=G8MYGDf_9ho
 
-<!-- <img href = "./Images/image.png"> -->
-
-Planned Sims:
 
 Conways Game of Life
 using: 
@@ -32,7 +30,15 @@ https://www.youtube.com/watch?v=cRWg2SWuXtM
 
 Orbiting Planets
 using:
-https://github.com/Josephbakulikira/N-body-simulation-with-python--Gravity-solar-system
+https://www.youtube.com/watch?v=WTLPmUHTPqo
+
+
+<!-- <img href = "./Images/image.png"> -->
+
+Planned Sims:
+
+TBA
+
 
 
 Buttons were made using: 
