@@ -13,6 +13,8 @@ using
 
 > pip install pymunk
 
+GUI
+<img src="./Images/PythonGUI.png">
 
 
 Sims Currently Working: 
@@ -32,6 +34,7 @@ Orbiting Planets
 using:
 https://www.youtube.com/watch?v=WTLPmUHTPqo
 
+<img src="./Images/solarSystem.png">
 
 <!-- <img href = "./Images/image.png"> -->
 
