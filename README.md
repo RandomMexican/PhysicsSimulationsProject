@@ -24,10 +24,13 @@ made using this tutorial
 https://www.youtube.com/watch?v=YrNpkuVIFdg
 https://www.youtube.com/watch?v=G8MYGDf_9ho
 
+<img src="./Images/SAND.png">
 
 Conways Game of Life
 using: 
 https://www.youtube.com/watch?v=cRWg2SWuXtM
+
+<img src="./Images/GOL.png">
 
 
 Orbiting Planets
